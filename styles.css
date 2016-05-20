@@ -1,1 +1,4 @@
-$("input:text:visible:first").focus();
+.checkbox-inline{
+	width: 84px;
+	margin-left: 10px;
+}

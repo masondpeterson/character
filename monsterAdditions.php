@@ -33,14 +33,12 @@ if($_SERVER['REQUEST_METHOD'] == "POST") {
     <!-- end what makes containers work -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-  <!--end Bootstrap--> 
-
+  <!-- Angular -->
+<!--     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script> -->
   <!--Angular Bootstrap-->
-  
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.3.2/ui-bootstrap-tpls.min.js"></script> -->
-  
-  <!--end Angular Bootstrap-->
-
+<!--     <script src="/Scripts/angular-ui/ui-bootstrap.min.js"></script>
+    <script src="/Scripts/angular-ui/ui-bootstrap-tpls.min.js"></script> 
+ -->
 </head>
 
 <body>
@@ -83,9 +81,56 @@ if($_SERVER['REQUEST_METHOD'] == "POST") {
 	  	  	<input type="text" class="form-control" name="monsterAlignment" placeholder="Alignment" />
   	  	</div>
       </div>
-      <div class="col-sm-4">
-        <input type="submit" name="submitMonster" value="Submit" />
+      <div class="col-sm-7">
+        <?php
+        $environments = $db->get_environments();
+        foreach($environments as $e){
+          ?>
+          <label class="checkbox-inline">
+            <input type="checkbox" value="e<?=$e->env_id?>" name="env_box"><?=$e->env_name?>
+          </label>
+          <?php
+        }
+        ?>
       </div>
+<!--       <h3>Environments</h3>
+      <div class="col-sm-7">
+        <label class="checkbox-inline">
+          <input type="checkbox" value="" name="env_arctic">Arctic
+        </label>
+        <label class="checkbox-inline">
+          <input type="checkbox" value="" name="env_coastal">Coastal
+        </label>
+        <label class="checkbox-inline">
+          <input type="checkbox" value="" name="env_desert">Desert
+        </label>
+        <label class="checkbox-inline">
+          <input type="checkbox" value="" name="env_forest">Forest
+        </label>
+        <label class="checkbox-inline">
+          <input type="checkbox" value="" name="env_grassland">Grassland
+        </label>
+        <label class="checkbox-inline">
+          <input type="checkbox" value="" name="env_hill">Hill
+        </label>
+        <label class="checkbox-inline">
+          <input type="checkbox" value="" name="env_mountain">Mountain
+        </label>
+        <label class="checkbox-inline">
+          <input type="checkbox" value="" name="env_swamp">Swamp
+        </label>
+        <label class="checkbox-inline">
+          <input type="checkbox" value="" name="env_underdark">Underdark
+        </label>
+        <label class="checkbox-inline">
+         <input type="checkbox" value="" name="env_water">Water
+        </label>
+        <label class="checkbox-inline">
+          <input type="checkbox" value="" name="env_urban">Urban
+        </label>
+      <br><br>  
+      <input type="submit" name="submitMonster" value="Submit" />
+      </div> -->
 	  </form>
     </div>
   </div>
