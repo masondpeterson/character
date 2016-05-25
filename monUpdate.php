@@ -22,7 +22,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST") {
 
 <head>
 
-  <title>Monster Input</title>
+  <title>Update Monster</title>
   <link rel="stylesheet" type="text/css" href="styles.css">
 
   <!-- Bootstrap-->
@@ -45,7 +45,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST") {
 
 <div class="container">
   <div class="row">
-    <h1>Add New Monster</h1>
+    <h1>Update/Edit Monsters</h1>
   </div>
   <div class="row">
     <div class="col-sm-7">

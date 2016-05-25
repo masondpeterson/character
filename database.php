@@ -13,7 +13,7 @@ class database {
 	function add_monster($monsterName, $monsterCr, $monsterSize, $monsterType, $monsterAlignment){
 		global $conn;
 		$query = "INSERT INTO characters.monsters (monster_name, monster_CR, monster_size, monster_type, monster_alignment) VALUES ('$monsterName', '$monsterCr', '$monsterSize', '$monsterType', '$monsterAlignment')";
-		echo $query;
+		// echo $query;
 		return $conn->query($query);
 	}
 	function get_monsters(){
@@ -28,7 +28,7 @@ class database {
 		}
 		return $monsterList; //stores this contents and sends to page
 	}
-// There is some problem with this function that is throwing an error
+	//This function retrieves the list of env from the env's table
 	function get_environments(){
 		global $conn;
 		$query = "SELECT env_id, env_name FROM characters.environments";
@@ -40,9 +40,24 @@ class database {
 		}
 		return $environments;
 	}
-	// function add_environment($arctic, $coastal, $desert, $forest, $grassland, $hill, $mountain, $swamp, $underdark, $water, $urban){
+	//This is the function that is used to update a monster in the DB
+	function update_monsters(){
+		global $conn;
+		$query = "";
+		return $conn->query($query);
+	}
+	//This function retrieves the columns from the monster table for input fields
+	// function get_monDetails(){
 	// 	global $conn;
-	// 	$query = "INSERT INTO monsters_environments (mon_id, env_id) VALUES ()"
+	// 	$query = "SELECT `COLUMN_NAME` FROM `INFORMATION_SCHEMA`.`COLUMNS` WHERE `TABLE_SCHEMA`='characters' AND `TABLE_NAME`='monsters'";
+	// 	$result=$conn->query($query);
+	// 	$monDetails=array();
+	// 	$result->data_seek(0);
+	// 	while($entry=$result->fetch_object()){
+	// 		$monDetails[]=$entry;
+	// 	}
+	// 	echo $query;
+	// 	return $monDetails;		
 	// }
 }
 
