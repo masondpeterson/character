@@ -1,0 +1,11 @@
+****Insert values from 2 tables into a new table****
+insert into classroom (date, teacher_id, student_id)
+select '2014-07-08', t.id, s.id
+from teachers t,students s
+where t.teacher_name = 'david'
+and s.student_name = 'sam';
+
+// Another way
+select [value1] into @tid from teachers where teacher_name = 'david';
+select student_id into @sid from students where student_name = 'sam';
+insert into classroom (date, teacher_id, student_id) values ('2014-07-08',@tid,@sid);

@@ -59,6 +59,18 @@ class database {
 	// 	echo $query;
 	// 	return $monDetails;		
 	// }
+	function insert_monster($monName){
+		global $conn;
+		// Check connection
+		if ($conn->connect_error){
+			die("Connection failed: " . $conn->connect_error);
+		}
+
+		$query = "INSERT INTO characters.monname (mon_name) VALUES ('$monName')";
+		
+		// echo $query;
+		return $conn->query($query);
+	}
 }
 
 global $db;
